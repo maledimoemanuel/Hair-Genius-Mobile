@@ -15,7 +15,7 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 
-import AsyncStorage from '@react-native-community/async-storage';
+//import AsyncStorage from '@react-native-community/async-storage';
 
 import Loader from './Components/Loader';
 
@@ -38,7 +38,7 @@ const LoginScreen = ({navigation}) => {
       return;
     }
     setLoading(true);
-    let dataToSend = {email: userEmail, password: userPassword};
+    /*let dataToSend = {email: userEmail, password: userPassword};
     let formBody = [];
     for (let key in dataToSend) {
       let encodedKey = encodeURIComponent(key);
@@ -75,7 +75,7 @@ const LoginScreen = ({navigation}) => {
         //Hide Loader
         setLoading(false);
         console.error(error);
-      });
+      });*/
   };
 
   return (
@@ -91,14 +91,10 @@ const LoginScreen = ({navigation}) => {
         <View>
           <KeyboardAvoidingView enabled>
             <View style={{alignItems: 'center'}}>
+              <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 20}}>Hair Genius</Text>
               <Image
-                source={require('../Image/aboutreact.png')}
-                style={{
-                  width: '50%',
-                  height: 100,
-                  resizeMode: 'contain',
-                  margin: 30,
-                }}
+                source={require('../Image/logo.jpg')}
+                style={{width: '25%', height: '40%', resizeMode: 'contain', borderRadius: 60}}
               />
             </View>
             <View style={styles.SectionStyle}>
@@ -127,7 +123,7 @@ const LoginScreen = ({navigation}) => {
                   setUserPassword(UserPassword)
                 }
                 placeholder="Enter Password" //12345
-                placeholderTextColor="#8b9cb5"
+                placeholderTextColor="#</Text>"
                 keyboardType="default"
                 ref={passwordInputRef}
                 onSubmitEditing={Keyboard.dismiss}
@@ -151,7 +147,7 @@ const LoginScreen = ({navigation}) => {
             <Text
               style={styles.registerTextStyle}
               onPress={() => navigation.navigate('RegisterScreen')}>
-              New Here ? Register
+              New Here? <Text style={{color: '#8b9cb5'}}>Create Acoount</Text>
             </Text>
           </KeyboardAvoidingView>
         </View>
@@ -165,7 +161,7 @@ const styles = StyleSheet.create({
   mainBody: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#307ecc',
+    backgroundColor: '#4b0082',
     alignContent: 'center',
   },
   SectionStyle: {
@@ -177,7 +173,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   buttonStyle: {
-    backgroundColor: '#7DE24E',
+    backgroundColor: '#51CBB5',
     borderWidth: 0,
     color: '#FFFFFF',
     borderColor: '#7DE24E',
